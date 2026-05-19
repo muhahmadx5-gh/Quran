@@ -190,56 +190,80 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
+        
         .grammar-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
             font-size: 1.1rem;
             background: white;
+            border-radius: 15px;
+            overflow: hidden;
         }
 
         .grammar-table th {
             background: linear-gradient(135deg, #2c3e50, #1a1a2e);
             color: white;
-            padding: 15px 10px;
+            padding: 18px 15px;
             text-align: center;
             font-weight: 700;
-            border: 2px solid #34495e;
+            border: none;
             font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .grammar-table td {
-            padding: 12px 10px;
+            padding: 18px 15px;
             text-align: center;
-            border: 2px solid #bdc3c7;
+            border: 1px solid #e0e0e0;
             vertical-align: middle;
+            transition: all 0.3s;
         }
 
-        .grammar-table tr:nth-child(even) { background: #f8f9fa; }
-        .grammar-table tr:hover { background: #e8f6f3; }
+        .grammar-table tbody tr:hover td {
+            background: #e8f6f3;
+            transform: scale(1.02);
+        }
 
-        .header-green { background: linear-gradient(135deg, #7cb342, #558b2f) !important; }
-        .header-purple { background: linear-gradient(135deg, #8e6ba8, #6a4c93) !important; }
-        .header-blue { background: linear-gradient(135deg, #3498db, #2980b9) !important; }
-        .header-pink { background: linear-gradient(135deg, #e91e63, #c2185b) !important; }
-        .header-orange { background: linear-gradient(135deg, #ff9800, #f57c00) !important; }
-
-        .cell-light-green { background: #dcedc8; }
-        .cell-light-blue { background: #e3f2fd; }
-        .cell-light-pink { background: #fce4ec; }
-        .cell-light-orange { background: #fff3e0; }
-        .cell-light-purple { background: #f3e5f5; }
+        .grammar-table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
 
         .pronoun-arabic {
             font-family: 'Amiri', 'Noto Sans Arabic', serif;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: #c0392b;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            display: block;
+            margin-bottom: 8px;
         }
 
         .pronoun-meaning {
             font-size: 1rem;
             color: #555;
+            line-height: 1.6;
+        }
+
+        .cell-light-green {
+            background: linear-gradient(135deg, #dcedc8, #c5e1a5) !important;
+        }
+
+        .cell-light-blue {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb) !important;
+        }
+
+        .cell-light-pink {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9) !important;
+        }
+
+        .cell-light-orange {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2) !important;
+        }
+
+        .cell-light-purple {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7) !important;
         }
 
         .fiqh-card {
@@ -334,11 +358,13 @@
         <div class="nav-container">
             <a href="#" class="nav-brand">📖 نصاب برائے فائنلز</a>
             <ul class="nav-links">
+                <li><a href="#section-intros">تعارف</a></li>
                 <li><a href="#section1">سورہ نساء</a></li>
                 <li><a href="#section2">سورہ مائدہ</a></li>
                 <li><a href="#section3">سورتیں</a></li>
+                <li><a href="#section-word-meanings">الفاظ</a></li>
                 <li><a href="#section4">ضمیر منفصل</a></li>
-                <li><a href="#section5">فرائض</a></li>
+                <li><a href="#section5">فرائض و سوالات</a></li>
             </ul>
         </div>
     </nav>
@@ -780,7 +806,136 @@
             </div>
         </section>
 
-        <section id="section5" class="section">
+        
+        <!-- SECTION 4.5: Word Meanings from Surahs -->
+        <section id="section-word-meanings" class="section" style="border-right-color: #e91e63;">
+            <h2 class="section-title" style="color: #e91e63;">📖 اہم الفاظ کے معانی (سورہ نساء و مائدہ)</h2>
+
+            <h3 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.4rem; color: var(--primary); margin: 25px 0 15px; padding: 10px; background: var(--primary-light); border-radius: 10px; text-align: center;">سورہ نساء کے اہم الفاظ</h3>
+            <div class="grammar-table-container">
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th style="background: linear-gradient(135deg, #1a5f2a, #2e7d32);">عربی لفظ</th>
+                            <th style="background: linear-gradient(135deg, #6c3483, #8e44ad);">معنی</th>
+                            <th style="background: linear-gradient(135deg, #c0392b, #e74c3c);">آیت نمبر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">يَتَامَىٰ</span></td><td class="cell-light-purple">یتیم (بے والدین بچے)</td><td class="cell-light-orange">آیت 10</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">ظُلْمًا</span></td><td class="cell-light-purple">ظلم و زیادتی سے</td><td class="cell-light-orange">آیت 10</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">سَعِيرًا</span></td><td class="cell-light-purple">بھڑکتی ہوئی آگ</td><td class="cell-light-orange">آیت 10</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">حَظٌّ</span></td><td class="cell-light-purple">حصہ، نصیب</td><td class="cell-light-orange">آیت 11</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">فَرِيضَةٌ</span></td><td class="cell-light-purple">فرض، مقرر کردہ</td><td class="cell-light-orange">آیت 11</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">حُدُودُ</span></td><td class="cell-light-purple">حدود، حد بندیاں</td><td class="cell-light-orange">آیت 13</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">فَوْزٌ</span></td><td class="cell-light-purple">کامیابی، فتح</td><td class="cell-light-orange">آیت 13</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">فَاحِشَةٌ</span></td><td class="cell-light-purple">بدکاری، گناہ کبیرہ</td><td class="cell-light-orange">آیت 15</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">سُكَارَىٰ</span></td><td class="cell-light-purple">نشے میں مست</td><td class="cell-light-orange">آیت 43</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">جُنُبًا</span></td><td class="cell-light-purple">جنابت کی حالت میں</td><td class="cell-light-orange">آیت 43</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">صَعِيدًا</span></td><td class="cell-light-purple">مٹی، خاک</td><td class="cell-light-orange">آیت 43</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">طَيِّبًا</span></td><td class="cell-light-purple">پاک، صاف</td><td class="cell-light-orange">آیت 43</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">مُطْمَئِنٌّ</span></td><td class="cell-light-purple">مطمئن، پر سکون</td><td class="cell-light-orange">آیت 144</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">خِزْىٌ</span></td><td class="cell-light-purple">ذلت، رسوائی</td><td class="cell-light-orange">آیت 145</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.4rem; color: var(--secondary); margin: 25px 0 15px; padding: 10px; background: var(--secondary-light); border-radius: 10px; text-align: center;">سورہ مائدہ کے اہم الفاظ</h3>
+            <div class="grammar-table-container">
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th style="background: linear-gradient(135deg, #1a5f2a, #2e7d32);">عربی لفظ</th>
+                            <th style="background: linear-gradient(135deg, #6c3483, #8e44ad);">معنی</th>
+                            <th style="background: linear-gradient(135deg, #c0392b, #e74c3c);">آیت نمبر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">وَسِيلَةٌ</span></td><td class="cell-light-purple">وسیلہ، قربت کا ذریعہ</td><td class="cell-light-orange">آیت 35</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">فَلَحَ</span></td><td class="cell-light-purple">کامیاب ہونا، فلاح پانا</td><td class="cell-light-orange">آیت 35</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">يَفْتَدُوا۟</span></td><td class="cell-light-purple">اپنی جان چھڑانا</td><td class="cell-light-orange">آیت 36</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">أَلِيمٌ</span></td><td class="cell-light-purple">دردناک، تکلیف دہ</td><td class="cell-light-orange">آیت 36</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">مُقِيمٌ</span></td><td class="cell-light-purple">دائمی، مستقل</td><td class="cell-light-orange">آیت 37</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">سَارِقٌ</span></td><td class="cell-light-purple">چور (مرد)</td><td class="cell-light-orange">آیت 38</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">نَكَالٌ</span></td><td class="cell-light-purple">عبرت، سخت سزا</td><td class="cell-light-orange">آیت 38</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">تَابَ</span></td><td class="cell-light-purple">توبہ کرنا</td><td class="cell-light-orange">آیت 39</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">أَصْلَحَ</span></td><td class="cell-light-purple">اصلاح کرنا، درست کرنا</td><td class="cell-light-orange">آیت 39</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">يُسَارِعُونَ</span></td><td class="cell-light-purple">تیزی سے دوڑنا، جلدی کرنا</td><td class="cell-light-orange">آیت 41</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">يُحَرِّفُونَ</span></td><td class="cell-light-purple">بدلنا، تحریف کرنا</td><td class="cell-light-orange">آیت 41</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">خِزْىٌ</span></td><td class="cell-light-purple">ذلت، رسوائی</td><td class="cell-light-orange">آیت 41</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">سُحْتٌ</span></td><td class="cell-light-purple">حرام مال، ناپاک روزی</td><td class="cell-light-orange">آیت 42</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">قِسْطٌ</span></td><td class="cell-light-purple">انصاف، برابری</td><td class="cell-light-orange">آیت 42</td></tr>
+                        <tr><td class="cell-light-green"><span class="pronoun-arabic">مُقْسِطِينَ</span></td><td class="cell-light-purple">انصاف کرنے والے</td><td class="cell-light-orange">آیت 42</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 4.6: Surah Introductions -->
+        <section id="section-intros" class="section" style="border-right-color: #009688;">
+            <h2 class="section-title" style="color: #009688;">📚 سورتوں کا تعارف</h2>
+
+            <div class="ayah-card" style="border-right-color: #1a5f2a;">
+                <h3 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 15px;">سورہ نساء کا تعارف</h3>
+                <ul class="fiqh-list urdu-text" style="font-size: 1.1rem;">
+                    <li><strong>نام:</strong> "نساء" عربی میں "عورتوں" کا جمع ہے۔</li>
+                    <li><strong>ترتیب:</strong> قرآن مجید کی چوتھی سورت۔</li>
+                    <li><strong>آیات:</strong> 176 آیات۔</li>
+                    <li><strong>مکی/مدنی:</strong> مدنی سورت (ہجرت کے بعد نازل ہوئی)۔</li>
+                    <li><strong>موضوع:</strong> عورتوں کے حقوق، وراثت کے قوانین، نکاح، طلاق، یتیموں کا خیال، اور معاشرتی اصلاحات۔</li>
+                    <li><strong>اہمیت:</strong> یہ سورت اسلامی معاشرے کے بنیادی اصول بیان کرتی ہے، خاص طور پر خاندانی نظام اور عورتوں کے حقوق کے حوالے سے۔</li>
+                </ul>
+            </div>
+
+            <div class="ayah-card" style="border-right-color: #6c3483;">
+                <h3 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; color: var(--secondary); margin-bottom: 15px;">سورہ مائدہ کا تعارف</h3>
+                <ul class="fiqh-list urdu-text" style="font-size: 1.1rem;">
+                    <li><strong>نام:</strong> "مائدہ" عربی میں "دسترخوان" یا "تھال" کو کہتے ہیں۔</li>
+                    <li><strong>ترتیب:</strong> قرآن مجید کی پانچویں سورت۔</li>
+                    <li><strong>آیات:</strong> 120 آیات۔</li>
+                    <li><strong>مکی/مدنی:</strong> مدنی سورت۔</li>
+                    <li><strong>موضوع:</strong> حلال و حرام کھانے پینے کی چیزیں، انصاف، جہاد، عہد شکنی، اور اہل کتاب (یہود و نصاریٰ) کے ساتھ معاملات۔</li>
+                    <li><strong>اہمیت:</strong> یہ سورت اسلامی احکامات، شرعی قوانین، اور اخلاقیات کی وضاحت کرتی ہے۔</li>
+                </ul>
+            </div>
+
+            <div class="ayah-card" style="border-right-color: #d4af37;">
+                <h3 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 15px;">سورت الفاتحہ کا تعارف</h3>
+                <ul class="fiqh-list urdu-text" style="font-size: 1.1rem;">
+                    <li><strong>نام:</strong> "فاتحہ" یعنی "کھولنے والی"، "شروع کرنے والی"۔</li>
+                    <li><strong>ترتیب:</strong> قرآن مجید کی پہلی سورت۔</li>
+                    <li><strong>آیات:</strong> 7 آیات (سبع من المثانی)۔</li>
+                    <li><strong>مکی/مدنی:</strong> مکی سورت۔</li>
+                    <li><strong>خاص نام:</strong> "ام الكتاب" (کتاب کی ماں)، "السبع المثانی" (بار بار پڑھی جانے والی سات آیات)۔</li>
+                    <li><strong>اہمیت:</strong> نماز کا رکن، قرآن کا خلاصہ، اور اللہ سے دعا و استعانت کا بہترین نمونہ۔</li>
+                </ul>
+            </div>
+
+            <div class="ayah-card" style="border-right-color: #c0392b;">
+                <h3 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 15px;">سورت الکافرون کا تعارف</h3>
+                <ul class="fiqh-list urdu-text" style="font-size: 1.1rem;">
+                    <li><strong>نام:</strong> "الکافرون" یعنی "کافر لوگ"۔</li>
+                    <li><strong>ترتیب:</strong> قرآن مجید کی 109ویں سورت۔</li>
+                    <li><strong>آیات:</strong> 6 آیات۔</li>
+                    <li><strong>مکی/مدنی:</strong> مکی سورت۔</li>
+                    <li><strong>موضوع:</strong> شرک سے پاک توحید کا اعلان، اور کفر سے اعلانِ براءت۔</li>
+                    <li><strong>اہمیت:</strong> یہ سورت توحید کی بنیاد پر استقامت کا پیغام دیتی ہے۔</li>
+                </ul>
+            </div>
+
+            <div class="ayah-card" style="border-right-color: #ff9800;">
+                <h3 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; color: #e65100; margin-bottom: 15px;">سورت العصر کا تعارف</h3>
+                <ul class="fiqh-list urdu-text" style="font-size: 1.1rem;">
+                    <li><strong>نام:</strong> "العصر" یعنی "زمانہ"، "وقت"، خاص طور پر عصر کا وقت۔</li>
+                    <li><strong>ترتیب:</strong> قرآن مجید کی 103ویں سورت۔</li>
+                    <li><strong>آیات:</strong> 3 آیات۔</li>
+                    <li><strong>مکی/مدنی:</strong> مکی سورت۔</li>
+                    <li><strong>موضوع:</strong> انسان کی نقصان میں ہونے کی قسم، اور کامیابی کے 4 اصول (ایمان، نیک عمل، حق کی تلقین، صبر کی تلقین)۔</li>
+                    <li><strong>اہمیت:</strong> قرآن کا خلاصہ، انسانی کامیابی کا راستہ۔</li>
+                </ul>
+            </div>
+        </section>
+<section id="section5" class="section">
             <h2 class="section-title">🕌 نماز، وضو، غسل، تیمم کے فرائض</h2>
 
             <div class="fiqh-card">
@@ -834,19 +989,119 @@
             </div>
 
             <div class="question-box">
-                <h4 class="urdu-text">📝 استاد کے پوچھے گئے امتحانی سوالات (سورہ نساء اور سورہ مائدہ سے متعلق)</h4>
-                <ol class="urdu-text">
-                    <li><strong>سورہ نساء آیت 10:</strong> یتیموں کا مال ناحق کھانے والے کا کیا انجام ہوگا؟ اس آیت سے کیا سبق ملتا ہے؟</li>
-                    <li><strong>سورہ نساء آیات 11-12:</strong> وراثت کے تقسیم کے اصول بیان کریں۔ بیٹی کو کتنا حصہ ملتا ہے اور بیٹے کو کتنا؟</li>
-                    <li><strong>سورہ نساء آیت 13-14:</strong> اللہ کی حدود کی اطاعت کرنے والوں اور نافرمانی کرنے والوں کا انجام کیا ہے؟</li>
-                    <li><strong>سورہ نساء آیت 15:</strong> بدکاری کرنے والی عورتوں کی سزا کیا ہے؟ کتنے گواہوں کی ضرورت ہے؟</li>
-                    <li><strong>سورہ نساء آیت 43:</strong> نماز پڑھتے وقت کن حالتوں میں احتیاط کرنی چاہیے؟ تیمم کب اور کیسے کیا جاتا ہے؟</li>
-                    <li><strong>سورہ نساء آیت 144:</strong> ایمان لانے کے بعد کفر کرنے والے کا کیا حال ہوگا؟ استثناء کس صورت میں ہے؟</li>
-                    <li><strong>سورہ مائدہ آیت 35:</strong> "وسیلہ" سے کیا مراد ہے؟ ایمان والوں کو کن تین چیزوں کا حکم دیا گیا ہے؟</li>
-                    <li><strong>سورہ مائدہ آیت 38-39:</strong> چوری کی سزا کیا ہے؟ توبہ قبول ہونے کی شرط کیا ہے؟</li>
-                    <li><strong>سورہ مائدہ آیت 41:</strong> منافقین اور یہودیوں کے بارے میں اللہ کا کیا فرمان ہے؟ وہ کلمات کو کیسے بدلتے تھے؟</li>
-                    <li><strong>سورہ مائدہ آیت 42-43:</strong> انصاف سے فیصلہ کرنے کا حکم کیوں دیا گیا؟ یہودیوں کی تورات میں حکم ہونے کے باوجود وہ کیوں پیچھے ہٹتے تھے؟</li>
-                </ol>
+                <h4 class="urdu-text">📝 امتحانی سوالات اور ان کے جوابات (سورہ نساء اور سورہ مائدہ)</h4>
+
+                <div style="margin-bottom: 30px;">
+                    <h5 style="font-family: 'Noto Nastaliq Urdu', serif; color: var(--primary); font-size: 1.2rem; margin: 20px 0 10px; padding: 8px 15px; background: var(--primary-light); border-radius: 8px;">سورہ نساء کے سوالات</h5>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--primary);">
+                        <p style="font-weight: bold; color: var(--primary); margin-bottom: 8px;">❓ سوال 1: یتیموں کا مال ناحق کھانے والے کا کیا انجام ہوگا؟ (آیت 10)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> جو لوگ یتیموں کا مال ناحق کھاتے ہیں وہ اپنے پیٹوں میں آگ بھر رہے ہیں اور عنقریب وہ بھڑکتی ہوئی آگ (جہنم) میں داخل ہوں گے۔ اس سے سبق ملتا ہے کہ یتیموں کے حقوق کا خیال رکھنا ضروری ہے اور ان کے مال کی حفاظت کرنی چاہیے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--primary);">
+                        <p style="font-weight: bold; color: var(--primary); margin-bottom: 8px;">❓ سوال 2: وراثت کے تقسیم کے اصول بیان کریں۔ بیٹی کو کتنا حصہ ملتا ہے اور بیٹے کو کتنا؟ (آیات 11-12)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> مرد کو دو عورتوں کے برابر حصہ ملتا ہے۔ اگر عورتیں دو سے زیادہ ہوں تو ان کو ترکہ کا دو تہائی حصہ ملے گا، اور اگر ایک بیٹی ہو تو اسے آدھا حصہ ملے گا۔ والدین میں سے ہر ایک کو چھٹا حصہ ملے گا (اگر اولاد ہو)۔ یہ اللہ کی طرف سے ایک فرض ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--primary);">
+                        <p style="font-weight: bold; color: var(--primary); margin-bottom: 8px;">❓ سوال 3: اللہ کی حدود کی اطاعت کرنے والوں اور نافرمانی کرنے والوں کا انجام کیا ہے؟ (آیات 13-14)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> اطاعت کرنے والوں کو اللہ ایسی جنتوں میں داخل فرمائے گا جن کے نیچے نہریں بہتی ہیں (یہ بڑی کامیابی ہے)۔ نافرمانی کرنے والوں کو آگ میں داخل کیا جائے گا جو اس میں ہمیشہ رہے گا اور ان کے لیے ذلت کا عذاب ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--primary);">
+                        <p style="font-weight: bold; color: var(--primary); margin-bottom: 8px;">❓ سوال 4: بدکاری کرنے والی عورتوں کی سزا اور گواہوں کی تعداد؟ (آیت 15)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> ان پر چار آدمیوں کی گواہی ضروری ہے۔ گواہی ثابت ہونے پر ان عورتوں کو گھروں میں بند رکھا جائے گا یہاں تک کہ موت ان کا کام تمام کردے یا اللہ ان کے لیے کوئی اور راستہ بنائے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--primary);">
+                        <p style="font-weight: bold; color: var(--primary); margin-bottom: 8px;">❓ سوال 5: نماز کے قریب نہ جانے کی حالتیں اور تیمم کا طریقہ؟ (آیت 43)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> نشے کی حالت میں اور جنابت کی حالت میں نماز کے قریب نہ جائیں۔ اگر پانی نہ ملے تو پاک مٹی (تیمم) کرو اور اپنے چہروں اور ہاتھوں پر مسح کرو۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--primary);">
+                        <p style="font-weight: bold; color: var(--primary); margin-bottom: 8px;">❓ سوال 6: ایمان کے بعد کفر کرنے والے کا حال اور استثناء؟ (آیت 144)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> ایمان کے بعد کفر کرنے والے پر اللہ کا غضب ہے اور ان کے لیے بڑا عذاب ہے۔ استثناء صرف اس صورت میں ہے جب شخص مجبور کیا جائے اور اس کا دل ایمان پر مطمئن ہو۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--primary);">
+                        <p style="font-weight: bold; color: var(--primary); margin-bottom: 8px;">❓ سوال 7: دنیا کی زندگی کو آخرت پر ترجیح دینے کا انجام؟ (آیت 145)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> جو لوگ آخرت پر دنیا کی زندگی کو ترجیح دیتے ہیں، اللہ ان کو ہدایت نہیں دیتا۔ ان کا انجام کفر کی ذلت اور آخرت میں بڑا عذاب ہے۔</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h5 style="font-family: 'Noto Nastaliq Urdu', serif; color: var(--secondary); font-size: 1.2rem; margin: 20px 0 10px; padding: 8px 15px; background: var(--secondary-light); border-radius: 8px;">سورہ مائدہ کے سوالات</h5>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--secondary); margin-bottom: 8px;">❓ سوال 8: "وسیلہ" سے کیا مراد ہے اور ایمان والوں کو کن تین چیزوں کا حکم؟ (آیت 35)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> "وسیلہ" سے مراد اللہ کی قربت کا ذریعہ ہے۔ ایمان والوں کو تین چیزوں کا حکم: (1) اللہ سے ڈرنا، (2) اللہ تک وسیلہ ڈھونڈنا، (3) اللہ کی راہ میں جہاد کرنا۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--secondary); margin-bottom: 8px;">❓ سوال 9: کافر لوگ قیامت کے عذاب سے کیسے بچنا چاہیں گے؟ (آیات 36-37)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> اگر ان کے پاس زمین میں سب کچھ ہو اور اس سے اپنی جان چھڑانا چاہیں، تو بھی قبول نہ کیا جائے گا۔ وہ آگ سے نکلنا چاہیں گے لیکن نکل نہیں سکیں گے، ان کے لیے دائمی عذاب ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--secondary); margin-bottom: 8px;">❓ سوال 10: چوری کی سزا اور توبہ کی شرط؟ (آیات 38-39)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> چور مرد اور عورت دونوں کے ہاتھ کاٹ دیئے جائیں گے۔ یہ ان کے کام کی سزا اور اللہ کی طرف سے عبرت ہے۔ توبہ قبول ہونے کی شرط: ظلم کے بعد توبہ کرنا اور اصلاح کرنا۔ اللہ بخشنے والا اور رحم کرنے والا ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--secondary); margin-bottom: 8px;">❓ سوال 11: اللہ کی بادشاہی کا ثبوت؟ (آیت 40)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> آسمانوں اور زمین کی بادشاہی اللہ ہی کی ہے۔ جو چاہے عذاب دے اور جسے چاہے معاف کردے۔ اللہ ہر چیز پر قادر ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--secondary); margin-bottom: 8px;">❓ سوال 12: منافقین اور یہودیوں کی صفات؟ (آیت 41)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> منافقین: منہ سے ایمان لاتے ہیں لیکن دل ایمان نہیں لاتے۔ یہودی: جھوٹ سننے والے، حرام کھانے والے، اللہ کے کلمات کو بدلنے والے۔ ان کے لیے دنیا میں ذلت اور آخرت میں بڑا عذاب ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--secondary); margin-bottom: 8px;">❓ سوال 13: انصاف سے فیصلہ کرنے کا حکم اور یہودیوں کی نافرمانی؟ (آیات 42-43)</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> انصاف سے فیصلہ کرنے کا حکم اس لیے دیا گیا کہ اللہ انصاف کرنے والوں سے محبت کرتا ہے۔ یہودیوں کے پاس تورات میں اللہ کا حکم ہونے کے باوجود وہ منہ موڑتے تھے، اس لیے وہ ایمان والے نہیں ہیں۔</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 style="font-family: 'Noto Nastaliq Urdu', serif; color: var(--accent); font-size: 1.2rem; margin: 20px 0 10px; padding: 8px 15px; background: var(--accent-light); border-radius: 8px;">عام سوالات (تمام سورتوں سے)</h5>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--accent);">
+                        <p style="font-weight: bold; color: var(--accent); margin-bottom: 8px;">❓ سوال 14: سورت الفاتحہ کی اہمیت اور اس کے خاص نام؟</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> سورت الفاتحہ "ام الكتاب" (کتاب کی ماں) اور "السبع المثانی" (بار بار پڑھی جانے والی سات آیات) کے ناموں سے مشہور ہے۔ یہ نماز کا رکن ہے، قرآن کا خلاصہ ہے، اور اللہ سے دعا و استعانت کا بہترین نمونہ پیش کرتی ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--accent);">
+                        <p style="font-weight: bold; color: var(--accent); margin-bottom: 8px;">❓ سوال 15: سورت الکافرون کا مرکزی پیغام کیا ہے؟</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> سورت الکافرون کا مرکزی پیغام توحید کی بنیاد پر استقامت ہے۔ اس میں اعلان کیا گیا: "تمہارے لیے تمہارا دین اور میرے لیے میرا دین" - یعنی شرک سے پاک توحید کا اعلان اور کفر سے براءت۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--accent);">
+                        <p style="font-weight: bold; color: var(--accent); margin-bottom: 8px;">❓ سوال 16: سورت العصر میں کامیابی کے کتنے اصول بیان ہوئے ہیں؟</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> سورت العصر میں کامیابی کے 4 اصول بیان ہوئے ہیں: (1) ایمان لانا، (2) نیک عمل کرنا، (3) ایک دوسرے کو حق کی نصیحت کرنا، (4) ایک دوسرے کو صبر کی تلقین کرنا۔ ان کے بغیر انسان نقصان میں ہے۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--accent);">
+                        <p style="font-weight: bold; color: var(--accent); margin-bottom: 8px;">❓ سوال 17: نماز کے 7 شرائط (خارجِ نماز) اور 6 ارکان (داخلِ نماز) کے نام؟</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> 7 شرائط: بدن کا پاک ہونا، کپڑوں کا پاک ہونا، جگہ کا پاک ہونا، ستر کا چھپانا، نماز کا وقت ہونا، قبلہ رو ہونا، نیت کرنا۔ 6 ارکان: تکبیر تحریمہ، قیام، قرآت، رکوع، دو سجدے، قعدہ اخیرہ۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--accent);">
+                        <p style="font-weight: bold; color: var(--accent); margin-bottom: 8px;">❓ سوال 18: وضو، غسل، اور تیمم میں کتنے فرائض ہیں؟</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> وضو: 4 فرائض (چہرہ دھونا، ہاتھ کہنیوں سمیت دھونا، سر مسح کرنا، پاؤں ٹخنوں سمیت دھونا)۔ غسل: 3 فرائض (کلی کرنا، ناک میں پانی ڈالنا، پورے بدن پر پانی بہانا)۔ تیمم: 4 فرائض (نیت، صاف مٹی لینا، چہرے پر مسح، ہاتھوں پر مسح)۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--accent);">
+                        <p style="font-weight: bold; color: var(--accent); margin-bottom: 8px;">❓ سوال 19: ضمیر منفصل کیا ہے اور یہ کس حالت میں استعمال ہوتا ہے؟</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> ضمیر منفصل وہ ضمیر ہے جو کسی اسم یا فعل سے الگ ہو کر استعمال ہوتا ہے۔ یہ ہمیشہ حالت رفع (فاعل کی حالت) میں استعمال ہوتا ہے۔ مثلاً: أَنَا (میں)، نَحْنُ (ہم)، أَنْتَ (تو)، هُوَ (وہ)۔</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; border-right: 4px solid var(--accent);">
+                        <p style="font-weight: bold; color: var(--accent); margin-bottom: 8px;">❓ سوال 20: سورہ نساء اور سورہ مائدہ میں کون سے احکام مشترک ہیں؟</p>
+                        <p style="color: #555; line-height: 2;"><strong>✅ جواب:</strong> دونوں سورتوں میں انصاف، اطاعتِ الٰہی، اور عہد شکنی سے بچنے کے احکام مشترک ہیں۔ دونوں میں کافرین اور منافقین کی صفات بیان ہوئی ہیں۔ دونوں میں نماز اور طہارت (وضو/غسل/تیمم) کے احکام موجود ہیں۔</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -863,9 +1118,11 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
